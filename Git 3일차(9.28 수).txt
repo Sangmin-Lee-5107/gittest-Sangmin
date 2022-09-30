@@ -1,0 +1,45 @@
+cat playlist.txt와 같이 cat 파일이름 을 치면 해당 헤드가 작성한 내용이 나타남.
+
+[헤드 변경]
+git switch 가지이름
+git checkout 가지이름
+
+[가지 생성]
+git branch 생성할 가지이름
+
+[가지 생성과 헤드 변경 동시에]
+git switch -c 생성할 가지이름 
+
+한 파일 내에서 여러명이 공동 작업을 한 경우 switch하기 위해서는 add와 comment 작업을 거쳐야만 switch가 가능
+단, 파일을 새로 생성한 경우 add와 commit 없이도 switch가 됨. 이 경우 다른 branch로 넘어가서 add와 comment 작업을 
+대신할 수 있는데, 이렇게 하면 파일을 생성한 건 son이어도 git log를 하면 master 것으로 나옴.
+
+또한, 파일 내에서 수정을 한 것은 git commit -a -m "코멘트"로 add와 commit을 한 번에 할 수 있지만, 새로 파일을 생성한 경우
+에는 파일을 생성한 branch 또한 add와 commit을 한 번에 할 수 없음. add 먼저 하고 commit을 해야 함.
+
+[삭제]
+git branch -d 가지이름 
+git branch -D 가지이름 
+으로 branch를 없앨 수 있지만 그 권한은 master에게만 있음.
+단, merge 하지 않았으면 merge 하기 전까지 -d로는 지울 수 없음. merge 하지 않고 지우려면 -D를 써야 함.
+
+[가지 이름 변경]
+이름을 변경하려면 먼저 헤드를 이름을 바꿀 곳으로 변경해야 함.
+git branch -m 새로운 가지이름 을 치면 이름이 변경됨.
+
+[merge]
+git merge 가지이름 으로 merge 할 수 있지만 그 권한은 master에게만 있음.(master로 헤드 변경)
+branch의 내용을 main으로 올려주는 것. 내용을 합치는 것이 아님.
+
+add와 commit 없이 merge 하게 되면 에러 발생
+이 경우 git merge --quit을 한 후 해당 파일을 add commit하고 merge 하면 됨.
+
+[merge 에러]
+1. 터미널에서는 git merge --quit 을 하면 됨.
+2. vscode에서는 해당 에러 파일을 연다.
+3. 원하는 대로 편집하고 저장한다.
+4. conflict marker를 지운다.
+5. 터미널에서 add하고 commit
+
+
+

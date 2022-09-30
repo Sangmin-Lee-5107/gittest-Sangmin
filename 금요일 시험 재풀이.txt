@@ -1,0 +1,56 @@
+1. byte < short < char < int < long < float < double
+
+2. 
+char a = 'a';
+String b = String.valueOf(a);
+
+3.
+double a = 3.14;
+int b = (int) a;
+
+4.
+private String name;
+getName()
+setName(String name)
+Person myobj = new Person();
+myobj.setName("상민");
+
+5.
+외부에서 값을 변경하지 못하게 해 보안을 강화하기 위해서
+
+6. 
+Main m = new Main();
+myStaticMethod(); //m.myStaticMethod();로 해도 됨.
+m.myPublicMethod();
+
+7.
+abstract 
+extends Main
+public void study(){
+	sout("~~");
+}
+Student st = new Student();
+sout(st.fname);
+sout(st.age);
+sout(st.graduationYear);
+st.study();
+
+8. 
+for(int i=0;i<threeArrays.length;i++){
+	for(int j=0;j<threeArrays[i].length;j++){
+		sout(threeArrays[i][j]);
+	}
+}
+
+9. 
+int a = 6;
+switch(a){
+	default:
+		sout("주말을 기다립니다.");
+		break;
+	case 6: case 7:
+		sout("주말입니다.");
+		break;
+}
+
+10. boolean

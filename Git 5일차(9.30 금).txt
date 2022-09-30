@@ -1,0 +1,56 @@
+GitHub 가입
+email : kgitbank5107@gmail.com
+name : Sangmin-Lee-5107
+
+오른쪽 위 사용자 아이콘 누르고 settings 누르면 왼쪽에 SSH and GPG keys가 나옴. 앞으로 여기에 자료를 올릴 예정.
+
+[SSH key 생성하기]
+방법은 구글에 github authentication 라고 치면 나오는 github docs에 자세히 나와있음.
+
+터미널에 ssh-keygen -t ed25519 -C "kgitbank5107@gmail.com" 라고 치기
+	> 엔터 > 엔터(비밀번호 발급하라는 문구에서) > 엔터 > 총 3번 치고나면 key가 발급됨.
+	> eval "$(ssh-agent -s)" 라고 치기 (Agent pid 4자리숫자 라고 나옴)
+	> ssh-add ~/.ssh/id_ed25519 라고 치면 key가 등록됨. (Identity added 라고 나옴)
+	> clip < ~/.ssh/id_ed25519.pub 라고 치고 메모장에 붙여넣기 하면 아래와 같이 뭐가 나오게 된다.
+	> ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPoqOor+AwoD1wYdvykjprRqu+TllmXGyeNTSoAVh596 kgitbank5107@gmail.com
+
+깃허브 사이트에 접속
+github > settings > SSH and GPG keys > new SSH keys > 아래 Key에 위에 복사된 내용을 붙여넣기 > key가 등록됨.
+> git 메인화면으로 돌아옴 > 왼쪽에 Create repository > 이름에 gittest-Sangmin 이라 적고 생성했음 
+> 깃허브에 주소가 생성된 것 > 여기서 주소창을 클릭해 내 주소 확인 가능
+
+터미널에 git remote -v 라고 쳐서 이전에 remote 작업이 있었는지 확인(지금은 아무것도 안 뜸)
+https://github.com/Sangmin-Lee-5107/gittest-Sangmin (내 깃허브 주소)
+
+[https 주소 이용해서 push 하는 방법]
+깃허브에 업로드 하고자 하는 폴더로 cd 해서 이동한 뒤, (지금은 MyFirstGit 폴더)
+git remote add origin 깃허브주소 치기(첫 작업이므로 오리진이라고 적음)
+git status 해서 변경된 파일 없는지 확인(있으면 add와 commit)
+git push origin master 라고 치기 (로그인 하라면서 창이 하나 더 뜨면 로그인 하기 > 권한부여 창 뜨면 에러난 것.)
+	> 에러난 경우 터미널에 git remote -v로 확인한 후
+	> git remote remove origin 라고 쳐서 삭제
+
+[https로 push가 안 될 경우 SSH 주소 이용해서 push]
+아까 깃허브 사이트에서 https가 아닌 SSH 주소를 복사해와,
+터미널에 git remote add origin 깃허브주소(SSH) 라고 치기
+git push origin master 라고 치기 > 연결하겠냐는 문구가 뜨면 yes 치기
+	> 깃허브 사이트에서 새로고침하면 MyFirstGit 폴더의 자료들이 GitHub로 올라간 것 확인 가능
+
+
+[친구 깃 내용 확인]
+터미널에서 GitCloneTask 라는 폴더를 만들었음(mkdir) - 아직 init X!!!
+git clone 친구깃허브주소 > dir 하면 > 친구의 repository 이름이 나옴 > 친구가 그 폴더 내에서 작성한 파일이 다 나옴.
+
+
+[깃허브에서 파일 작성]
+깃허브 사이트에서 Add a README 누르고 파일 작성.
+아래 Commit new file 부분에 제목을 적고 초록색 Commit new file 버튼을 누르기.
+
+
+
+
+
+
+
+
+

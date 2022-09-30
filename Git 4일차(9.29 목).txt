@@ -1,0 +1,25 @@
+[merge 에러]
+1. 터미널에서는 git merge --quit 을 하면 됨.
+2. vscode에서는 해당 에러 파일을 연다.
+3. 원하는 대로 편집하고 저장한다.
+4. conflict marker를 지운다.
+5. 터미널에서 add하고 commit
+---------------------------------------------------------
+[작업 수행 이전 상태 확인하기]
+git log --oneline 라고 치면 수행한 작업들을 볼 수 있음(현재 헤드가 했던 작업들을 로그로 보여줌)
+	> 여기서 나오는 앞의 노란 문자+숫자 패턴을 git checkout과 함께 치면 그 때 수행했던 작업으로 갈 수 있음.
+	> git checkout 622cf48 이런 식으로 치면 됨. 이것을 Hash Number라고 함.
+	> 드래그 후 마우스 우클릭으로 Paste 누르면 복사 붙여넣기 됨.
+git checkout 622cf48
+git switch master
+
+[GitHub]
+git Repository가 올라가 있는 cloud가 바로 GitHub
+포트폴리오, 과제, 다양한 자료 등도 깃헙에 올릴 수 있음.
+
+
+
+
+
+
+

@@ -1,0 +1,43 @@
+git add . 하면 전체가 다 add 됨
+git commit -m "changed all files" 등으로 add하고 나서 코멘트 남기기
+git status 해서 다 commit 됐는지 확인
+
+vscode에서 폴더를 만든 후 이미지 파일을 몇개 넣은 다음 터미널에서 git status를 해보면 pictures/ 라고 나옴. 
+	> 폴더는 뒤에 /가 생김.
+터미널에서 git add 파일이름(jpg나 PNG까지 똑같이 따라 써야 함)해서 add 하기
+add했으니 commit 코멘트 남기기
+
+[코멘트 수정 방법]
+1. git add 파일이름 한 후 git commit 이라 치면 나오는 화면(vim 창. 리눅스 편집창)에서 i 버튼을 누르면 아래에 INSERT 하라고 나옴.
+	> 변경할 코멘트를 적은 후에 Esc 버튼을 누르면 아래 INSERT가 사라짐.
+	> 이후에 :wq 라고 치면 원래 창으로 돌아옴.
+
+2. 또는 git commit --amend 라고 치면 git commit과 같이 vim 창이 나옴. 여기서 코멘트 내용을 수정할 수 있음. 
+	> 이후 방법은 똑같음.
+
+터미널로 돌아와 git log --oneline 라고 치면 변경된 코멘트를 확인할 수 있음.
+
+
+[숨김 설정(git에 파일이 감지 안 되게 하는 법)]
+touch .gitignore 라고 치면 git에 감지되지 않는 파일이 생김. 이후 git add . 하고 
+	> git commit -m "멘트", git status 단계를 거치면 됨.
+vscode에서 .gitignore 라는 파일에 들어가, 감지되지 않게 하고 싶은 파일 이름을 정확하게 입력 후 저장.
+	> 단!!!  .gitignore 한 이후에 생성한 파일만 넣을 수 있음.
+	> 이러면 그 파일은 변경점이 있어도 git에 감지되지 않음(git status). 파일 여러개 적어도 상관 없음.
+
+
+[branch]
+원본(master)에서 수정하면 안 되기에 branch(가지치기)를 하게 됨. 
+
+git branch 가지이름 하면 branch가 만들어짐. 
+git branch 라고 치면 master(원본)을 포함해 만들어진 branch를 모두 보여줌.
+git switch 가지이름(아까 만든 가지이름)하면 master에서 가지로 바뀌게 됨.
+git log 했을 때 나오는 (HEAD -> alba1)는 현재 HEAD가 alba1이라는 의미.
+새로 만든 가지에서 vscode 작업을 수행한 뒤 add하고 commit 한 후 master로 switch하면 가지에서 수행한 작업이 가려지고
+	> master가 수행했던 작업만 보여짐(원본이 보존됨)
+git switch를 했을 때 현재 HEAD는 초록색 글자로 표시됨.
+git commit -a -m "문구" 라고 치면 add와 commit을 같이 할 수 있음.
+
+
+
+	

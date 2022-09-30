@@ -1,0 +1,91 @@
+수업용 gmail 계정 : kgitbank5107
+
+
+stackoverflow와 github에 오류 잡는 방법이 제일 많이 나와있음.
+
+
+https://git-scm.com/book/ko/v2
+https://backlog.com/git-tutorial/kr/
+
+
+Git
+1. Terminal vs GUI : 속도의 차이, 전체적인 조감도 볼 수 있는 장점
+> Terminal은 cmd창, GUI는 graphic user interface(처음 컴퓨터 설치 시 윈도우 설치창 등)
+GitKraken이 GUI 버전, 개발자는 Command line 사용함(terminal 버전)
+
+2. 깃 설치
+: 원래는 Linux 버전, gitbash는 windows를 위해 만들어진 버전
+다운로드 되었는지 확인(cmd창에 git -version)한 후에 지우고 다시 하기 : 제어판
+programing 폴더에서 git 날리기
+
+: https://git-scm.com/download/win
+	> 설치 시 기본 에디터는 vscode로
+	> 나머지는 default 값으로 그대로 next로 넘겨가며 설치
+	> Launch Git Bash 체크, View Release Notes 언체크
+
+설치 후 git Terminal에 
+git --version 쳐서 설치 잘 되었는지 확인
+git config user.name 쳐서 사용자 등록되어 있는지 확인
+git config --global user.name "Sangmin Lee" 쳐서 사용자 등록
+git config user.email 쳐서 이메일 등록되어 있는지 확인
+git config --global user.email kgitbank5107@gmail.com 쳐서 이메일 등록
+
+3. GitKraken 설치
+https://gitkraken.com
+
+4. 
+git Terminal에
+pwd 라고 쳐서 경로가 사용자로 되어있는지 확인
+mkdir MyFirstGit 라고 쳐서 디렉터를 만듬 > 사용자 폴더에 가서 MyFirstGit 폴더가 만들어졌는지 확인
+cd MyFirstGit 라고 치면 경로 변경
+git status 라고 쳐서 fatal : ~~ 신호 나오는지 확인(fatal 에러메세지가 안 나오면 다른 디렉토리로 돌아가야함. 누군가가 쓰고 있는 것)
+git init 라고 쳐서 git 작동시킴
+다시 git status 라고 치면 디렉토리의 상태를 읽어옴
+dir 라고 치면 디렉토리 안의 내용을 읽어옴(아직 아무것도 안 나옴) - dir 내에 있는 내용을 보여달라는 명령어
+dir -a 라고 치면 히든 파일도 다 불러옴(dir 내에 있는 모든 걸 다 보여달라는 명령어)
+cd .git 라고 치면 (change directory) 디렉토리 변경. (.git 자리로 가보자는 명령어)
+cd ..라고 치면 (띄어쓰기 주의) 원래 디렉토리로 돌아감.
+touch outline.txt : outline.txt라는 파일을 하나 만들라는 명령어
+
+5. 
+vscode로 들어가서 폴더 열기 > myFirstGit 폴더 열기 > 아까 생성한 outline.txt 파일 사용
+datatype.txt 파일 만든 후 구글에 java datatype 쳐서 나온 정리본 복사 붙여넣기
+
+6. 
+git Terminal에 git status 라고 치면 방금 만든 txt 파일들이 untracking 됐다고 나옴
+git add outline.txt > untracking된 파일들을 git에 추가해줌
+다시 git status라고 치면 outline.txt 파일이 등록되었다고 나옴 > datatype.txt 파일도 add 명령어로 추가
+rm -r 파일이름 라고 치면 완전히 지워짐
+폴더의 주소창에 커서를 대면 C:\Users\402-017 라는 식으로 주소가 나옴 이 경우 cd /c/Users/402-017라고 하면 디렉토리가 변경됨
+
+주의!!) MyFirstGit이나 MySecondGit으로 cd(이동)한 뒤에 git init을 해야 함. 사용자 폴더에서 git init하면 안 됨.
+실수로 사용자 폴더에서 git init한 경우 사용자 폴더로 경로 이동한 후 dir -a해서 .git이 있는지 확인하고
+rm -r .git으로 .git 파일을 지우기! 만약, 사용자 폴더에서 git을 작동(init)시켜버리면 모든 프로그램이 다 git의
+컨트롤을 받게 됨.
+
+pwd를 했을 때 /만 나오면 cd c:
+cd Users 쳐서 경로 이동
+
+git add file4.txt file5.txt 이런 식으로 한 번에 add도 가능
+
+7. 
+git commit -m " " : " "사이에 원하는 내용 넣으면 됨(뒷 사람에게 남기는 메모 같은 것) ex. "completed 4 and 5 job"
+git log 치면 repository를 공유하는 경우 누가 언제 무슨 메모를 남겼는지 나옴.
+vscode에서 파일을 여러개 수정한 경우 전체 저장해준 후 터미널에서 git status치면 무슨 파일이 수정되고 추가되었는지 나옴.
+수정되고 추가된 파일을 git add 해준 후 git commit -m "멘트" 쳐주고 git log하면 코멘트 친 시간이 다 나옴.
+
+자바 숙제) Exercise 프로젝트에서 진행
+- 자동차 클래스를 만드세요.(새로운 project로 만들기)
+- doors, wheels, model, color 라는 특성들이 private 하게 있습니다.
+- 새로운 모델을 입력받아 "새 자동차 모델의 이름은 ~입니다"로 출력되게 하세요.
+
+
+
+
+
+
+
+
+
+
+
